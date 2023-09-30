@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="try.js"></script>
-    <link rel="stylesheet"  href="tr.css">
+    <script src="web_form_js.js"></script>
+    <link rel="stylesheet"  href="web_form_style.css">
 
     <title>Simple Form</title>
 </head>
@@ -27,7 +27,7 @@
 
         </ul>
     </nav>
-    <form action="trying.php" method="POST" enctype="multipart/form-data" id="application_form">
+    <form action="web_form_php.php" method="POST" enctype="multipart/form-data" id="application_form">
 
     <section id="home">
         <h2>Welcome to AK Company</h2>
@@ -87,11 +87,11 @@
             </select>
             </div>      
             <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" class="form-input"  pattern="[A-Za-z]+"  title="Please enter only letters (no numbers or special characters)" autocomplete="given-name"  ><br><br>
+            <input type="text" id="first_name" name="first_name" class="form-input"   pattern="[A-Za-z0-9\s]+"   autocomplete="given-name"  ><br><br>
             
     
             <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" class="form-input"  pattern="[A-Za-z]+"  title="Please enter only letters (no numbers or special characters)"  >
+            <input type="text" id="last_name" name="last_name" class="form-input"  pattern="[A-Za-z0-9\s]+"  >
     
             <label for="age">Age:</label>
             <input type="number" id="age" name="age" class="form-input"><br><br>
@@ -103,21 +103,21 @@
             <textarea id="address" name="address" rows="4" cols="50" class="form-input"  autocomplete="street-address"></textarea><br><br>
     
             <label for="father_name">Father's Name:</label>
-            <input type="text" id="father_name" name="father_name"  pattern="[A-Za-z]+" class="form-input" title="Please enter only letters (no numbers or special characters)"  >
+            <input type="text" id="father_name" name="father_name"  pattern="[A-Za-z0-9\s]+" class="form-input"   >
     
             <label for="mother_name">Mother's Name:</label>
-            <input type="text" id="mother_name" name="mother_name" class="form-input" pattern="[A-Za-z]+"><br><br>
+            <input type="text" id="mother_name" name="mother_name" class="form-input" pattern="[A-Za-z0-9\s]+" ><br><br>
     
             <label for="father_occupation">Father's Occupation:</label>
-            <input type="text" id="father_occupation" name="father_occupation" class="form-input"  pattern="[A-Za-z]+"  title="Please enter only letters (no numbers or special characters)"> <br> 
+            <input type="text" id="father_occupation" name="father_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"  "> <br> 
             <label for="mother_occupation">Mother's Occupation:</label>
-            <input type="text" id="mother_occupation" name="mother_occupation" class="form-input"  pattern="[A-Za-z]+"  title="Please enter only letters (no numbers or special characters)"  ><br><br>
+            <input type="text" id="mother_occupation" name="mother_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"    ><br><br>
     
             <label for="annual_income">Annual Income:</label>
             <input type="number" id="annual_income" name="annual_income" class="form-input">
     
             <label for="nationality">Nationality:</label>
-            <input type="text" id="nationality" name="nationality"  pattern="[A-Za-z]+" class="form-input"  title="Please enter only letters (no numbers or special characters)"  ><br><br>
+            <input type="text" id="nationality" name="nationality"   pattern="[A-Za-z0-9\s]+" class="form-input"   ><br><br>
            
             <label for="martial_status">Marital Status:</label>
              <div>
@@ -333,7 +333,7 @@
     <h2 id="wohead">Work Experience</h2><br>
     <div id="companies">
         <!-- Company 1 -->
-     <h3>Do you have work experience</h3><br><br>
+        <h3>Do you have work experience</h3><br>
         <div id="rad">
         <label for="yes">Yes</label>
         <input type="radio" name="working" id="yes" value="yes" >
