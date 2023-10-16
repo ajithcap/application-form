@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll("#navList a");
 
@@ -41,33 +43,114 @@ function navigateToSection(targetId) {
     }
 }
 
-// Rest of your code...
+// Function to check if all required fields in a section are filled
+function areRequiredFieldsFilled(section) {
+    const requiredFields = section.querySelectorAll('[required]');
+    return Array.from(requiredFields).every(field => field.value.trim() !== '');
+}
 
-    // Function to navigate to the next section
-    function goToNextSection(currentSection) {
-        const nextSection = currentSection.nextElementSibling;
-        if (nextSection) {
-            currentSection.classList.add("hidden");
-            nextSection.classList.remove("hidden");
-            nextSection.scrollIntoView({
+// Function to enable or disable the "Next" button based on required fields
+function toggleNextButton(section) {
+    const nextButton = section.querySelector('button[id^="next"]');
+    if (nextButton) {
+        nextButton.disabled = !areRequiredFieldsFilled(section);
+    }
+}
+
+// Attach a "change" event listener to the required fields
+sections.forEach(section => {
+    const requiredFields = section.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        field.addEventListener('change', () => {
+            toggleNextButton(section);
+        });
+    });
+});
+// Function to highlight and scroll to the first unfilled required field
+function highlightUnfilledFields(section) {
+    const requiredFields = section.querySelectorAll('[required]');
+    for (const field of requiredFields) {
+        if (field.value.trim() === '') {
+            field.classList.add('unfilled');
+            field.scrollIntoView({ behavior: 'smooth' });
+            field.focus();
+            break; // Highlight and scroll to the first unfilled field only
+        }
+    }
+}
+
+// Function to clear highlighting from all fields
+function clearFieldHighlighting() {
+    const unfilledFields = document.querySelectorAll('.unfilled');
+    for (const field of unfilledFields) {
+        field.classList.remove('unfilled');
+    }
+}
+
+// Attach a "click" event listener to the "Next" button in each section
+sections.forEach(section => {
+    const nextButton = section.querySelector('button[id^="next"]');
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            clearFieldHighlighting(); // Clear previous field highlighting
+            if (!areRequiredFieldsFilled(section)) {
+                highlightUnfilledFields(section); // Highlight and scroll to unfilled fields
+                return; // Prevent moving to the next section if fields are unfilled
+            }
+            const nextSection = section.nextElementSibling;
+            if (nextSection) {
+                section.classList.add('hidden');
+                nextSection.classList.remove('hidden');
+                nextSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                const targetLinkId = `#${nextSection.id}`;
+                navLinks.forEach(navLink => {
+                    navLink.classList.remove('active-link');
+                    if (navLink.getAttribute('href') === targetLinkId) {
+                        navLink.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }
+});
+
+// Initial state: Disable "Next" buttons in sections with unfilled required fields
+sections.forEach(section => {
+    toggleNextButton(section);
+});
+
+
+ // Function to navigate to the next section
+function goToNextSection(currentSection) {
+    const nextSection = currentSection.nextElementSibling;
+    if (nextSection) {
+        currentSection.classList.add("hidden");
+        nextSection.classList.remove("hidden");
+        nextSection.scrollIntoView({
+            behavior: "smooth"
+        });
+
+        // Get the target section's ID
+        const targetId = nextSection.id;
+
+        // Navigate to the target section and update the highlight
+        navigateToSection(targetId);
+
+        // Define and use the nextButtonSection
+        const nextButtonSection = document.querySelector("#navList"); // Adjust the selector as needed
+        nextButtonSection.style.top = "0"; // Set the style property
+
+        // Find the first unfilled input field and scroll to it
+        const firstUnfilledField = nextSection.querySelector('[required]:not(:valid)');
+        if (firstUnfilledField) {
+            firstUnfilledField.scrollIntoView({
                 behavior: "smooth"
             });
-            
-                    // Get the target section's ID
-                    const targetId = nextSection.id;
-
-                    // Navigate to the target section and update the highlight
-                    navigateToSection(targetId);
-
-                    // Define and use the nextButtonSection
-                    const nextButtonSection = document.querySelector("#navList"); // Adjust the selector as needed
-                    nextButtonSection.style.top = "0"; // Set the style property
-                }
         }
-        
-       
-    
-
+    }
+}
 
     // Function to navigate to the previous section
     function goToPrevSection(currentSection) {
@@ -431,5 +514,140 @@ document.addEventListener("DOMContentLoaded", function () {
     homeButton.addEventListener("click", function () {
         // Redirect to the home page (replace 'home.html' with your actual home page URL)
         window.location.href = 'home.html';
+    });
+});
+// JavaScript code for the menu button
+document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById('menu-button');
+    const navList = document.getElementById('navList');
+
+    menuButton.addEventListener('click', () => {
+        navList.classList.toggle('hidden'); // Toggle the 'hidden' class for visibility
+        if (navList.style.left === '-300px') {
+            navList.style.left = '0';
+        } else {
+            navList.style.left = '-300px';
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("application_form"); // Replace with your form ID
+    const errorContainer = document.getElementById("error-message"); // Replace with the element where you want to display the error message
+
+    form.addEventListener("submit", function (event) {
+        let valid = true;
+        const requiredFields = form.querySelectorAll("[required]");
+
+        requiredFields.forEach(function (field) {
+            if (field.value.trim() === "") {
+                valid = false;
+                field.classList.add("error"); // Add a CSS class for styling (you can define this in your CSS)
+            } else {
+                field.classList.remove("error");
+            }
+        });
+
+        if (!valid) {
+            event.preventDefault(); // Prevent the form from being submitted
+
+            // Display the error message
+            errorContainer.textContent = "Please fill in all required fields."; // You can customize the error message or use another way to display it.
+            errorContainer.style.color = "red"; // Style the error message for visibility
+        } else {
+            errorContainer.textContent = ""; // Clear the error message if the form is valid
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("application_form"); // Replace with your form ID
+    const navLinks = document.querySelectorAll("nav ul li a"); // Your navigation links
+
+    form.addEventListener("submit", function (event) {
+        let valid = true;
+        const requiredFields = form.querySelectorAll("[required]");
+
+        requiredFields.forEach(function (field) {
+            if (field.value.trim() === "") {
+                valid = false;
+                // Display an error message next to the field (as shown in the previous response)
+                // ...
+
+                // You can also disable the navigation links
+                navLinks.forEach(function (link) {
+                    link.classList.add("disabled");
+                });
+            }
+        });
+
+        if (!valid) {
+            event.preventDefault(); // Prevent the form from being submitted
+        }
+    });
+
+    // Add event listeners to clear error messages and enable the navigation links
+    form.addEventListener("input", function () {
+        const errorMessages = form.querySelectorAll(".error-message");
+        errorMessages.forEach(function (errorMessage) {
+            errorMessage.remove();
+        });
+
+        // Enable the navigation links if all required fields are filled
+        const requiredFields = form.querySelectorAll("[required]");
+        const isFormValid = [...requiredFields].every((field) => field.value.trim() !== "");
+        if (isFormValid) {
+            navLinks.forEach(function (link) {
+                link.classList.remove("disabled");
+            });
+        }
+    });
+});
+// JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("application_form");
+    const errorMessage = document.getElementById("error-message");
+
+    form.addEventListener("submit", function (event) {
+        let valid = true;
+        const requiredFields = form.querySelectorAll("[required]");
+
+        requiredFields.forEach(function (field) {
+            if (field.value.trim() === "") {
+                valid = false;
+                field.classList.add("error"); // Add a CSS class for styling (you can define this in your CSS)
+            } else {
+                field.classList.remove("error");
+            }
+        });
+
+        if (!valid) {
+            event.preventDefault(); // Prevent the form from being submitted
+
+            // Display the error message
+            errorMessage.textContent = "Please fill in all required fields."; // You can customize the error message or use another way to display it.
+            errorMessage.style.color = "red"; // Style the error message for visibility
+            errorMessage.style.display = "block"; // Show the error message
+        } else {
+            errorMessage.textContent = ""; // Clear the error message if the form is valid
+            errorMessage.style.display = "none"; // Hide the error message again if needed
+        }
+    });
+});
+
+$(document).ready(function () {
+    $("#nextButton").on("click", function () {
+        let valid = true;
+
+        $(".required").each(function () {
+            if ($(this).val().trim() === "") {
+                valid = false;
+            }
+        });
+
+        if (!valid) {
+            $("#errorMessage").text("Please fill in all required fields.").show();
+        } else {
+            // Proceed to the next step in the form.
+        }
     });
 });
