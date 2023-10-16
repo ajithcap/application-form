@@ -1,4 +1,7 @@
+
 <?php
+ 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -25,6 +28,8 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+$successMessage = "";
+$errorMessage = "";
 
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -317,15 +322,74 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
             if ($stmt->execute()) {
                 echo "Data inserted successfully!<br>";
+                $successMessage = "Data inserted successfully!";
+                
             } else {
                 echo "Error: " . $stmt->error . "<br>";
+                $errorMessage = "Error: " . $stmt->error;
+                
             }
     
             $stmt->close();
         } else {
             echo "Error preparing SQL statement: " . $conn->error . "<br>";
+            $errorMessage = "Error preparing SQL statement: " . $conn->error;
         }
+        
     }
-                
-}        
-?>
+          
+}   
+
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application php server </title>
+    <link rel="icon" href="black.ico" type = "image/x-icon"/>
+
+
+    <link rel="stylesheet"  href="web_form_style.css">
+    <style>
+        /* Center the success message and the button vertically and horizontally */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #success-message {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            <?php if (!empty($successMessage)) { ?>display: block;<?php } else { ?>display: none;<?php } ?>
+        }
+    </style>
+</head>
+<body>
+    <section id="message">
+        <div id="success-message">
+            <div id="success-text"><?= $successMessage ?></div>
+            <div id="error-text" class="hidden"><?= $errorMessage ?></div>
+            <button id="home-button"  onclick="scrollToHomeSection()" href="#home">Home</button>
+        </div>
+    </section>
+    <script>
+         function scrollToHomeSection() {
+        // Use window.location to navigate to the "home.html" page
+        window.location.href = "index.html.HTML";
+    }
+
+    // Attach the click event handler to the "Home" button
+    var homeButton = document.getElementById("home-button");
+    homeButton.addEventListener("click", scrollToHomeSection);
+        
+    </script>
+</body>
+</html>
