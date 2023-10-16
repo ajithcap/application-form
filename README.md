@@ -5,10 +5,8 @@ this is a single webpage application form.
 
 Welcome to the AK Company Application Form repository! This web application allows users to fill out a comprehensive application form, providing personal and educational information. It also includes features for adding work experience, skills, and uploading a resume and cover letter.
 
-![Application Form](screenshot.png)
 
-![Picture1](https://github.com/ajithcap/htdocs/assets/104433561/9175a0b3-b289-4b5a-903d-8cbc392ad52b)
-
+![ee](https://github.com/ajithcap/application-form/assets/104433561/04eb1847-b9a3-4a34-9659-696e65198759)
 
 ## Features
 
