@@ -5,35 +5,73 @@
     box-sizing: border-box;
 }
 
+/* Your CSS styles here */
+
 /* Style for the entire body */
 body {
-    background-image: url('download.jfif');
-    background-size: cover; /* Adjust the image size to fit the header */
     font-family: Arial, sans-serif;
-    background-color:white ;
+    background-color: #ccc;
     margin: 0;
-    color:  #333;
+    color: #333;
+    width: 100%;
+    height: 100%;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  
+   
 }
 
+/* Add a ::before pseudo-element to create the image background */
+ 
+
+
+ 
+#application_form {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 500px;
+    margin-top: 300px;
+   
+}
+
+/* Set a consistent width for education, skills, and resume sections */
+#education,
+#work_experience,
+#skills,
+#resume {
+    width: 1000px; /* Set the width to match the application form */
+}
+
+#form-container{
+    max-width: 1000px;
+}
 /* Header styles */
 header, nav {
-    background-color:  #1cfac2;
-    color:  #1254e4;
+    background-color: #1cfac2;
+    color: #1254e4;
     padding: 10px;
 }
+
 /* Style the header with a fixed height and background image */
 .header-background {
     background-image: url('ece02fa7-b58c-4102-abb6-f973ce46c29f.png');
-    background-size: cover; /* Adjust the image size to fit the header */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center; /* Center the background image */
-    color:rgb(15, 14, 15); /* Text color for readability */
-    text-align: center; /* Center align text content */
-    padding: 20px 0; /* Adjust padding for content placement */
-    height: 200px; /* Set a fixed height for the header */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgb(15, 14, 15);
+    text-align: center;
+    padding: 20px 0;
+    min-height: 200px;
     object-fit: cover;
     overflow: hidden;
+    display: none;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
 #cname {
@@ -47,27 +85,31 @@ header, nav {
     margin-left: 190px;
 }
 
-/* Navigation List styles */
 #navList {
     position: fixed;
-    top: 200px;
-    left: 0;
-    height: 1000px;
-    bottom: 0;
+    top: 100px;
+    left: -300px; /* Initially hide it off-screen */
+    height: 67%;
     width: 300px;
-    background-color:  #2c3e50 ;
-    color:  #ecf0f1;
+    background-color: #2c3e50;
+    color: #ecf0f1;
     padding: 20px;
-    overflow-y: auto;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    transition: left 0.3s; /* Add a smooth transition effect for sliding */
+    z-index: 2; /* Ensure it's above the content */
 }
+
+
 /* Style the navigation */
 nav {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 10px;
     width: 100%;
-    z-index: 1; /* Ensure it's above the content */
+    z-index: 1;
 }
+
 #navList ul {
     list-style: none;
     padding: 0;
@@ -75,8 +117,6 @@ nav {
 
 #navList ul li {
     margin-bottom: 40px;
-   
-    
 }
 
 #navList ul li a {
@@ -86,37 +126,287 @@ nav {
 }
 
 #navList ul li a:hover {
-    color: rgb(224, 28, 215); /* Set the color you want on hover */
-    text-decoration-color: brown; /* Optional: To change the text decoration color as well */
+    color: rgb(224, 28, 215);
+    text-decoration-color: brown;
 }
 
 #navList ul li.clicked a {
-    color: red; /* Change this to the color you want for the clicked state */
+    color: red;
 }
 
 .highlighted {
-    border: 1px solid rgb(122, 248, 138); /* Change the color and border properties as needed */
-    display: flex; /* Use flex to center content */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    border: 1px solid rgb(122, 248, 138);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(221, 146, 48);
     border-radius: 2%;
     max-height: 50px;
     padding: 20px;
     flex-direction: column;
-   
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#home {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    z-index: 0; /* Set this to 0 so your content is on top of the video */
+}
+
+#personal_info::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('copy.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+
+#contact_info::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('electronic-devices-near-globe-plant.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#education::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('1209477.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#work_experience::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bu.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#skills::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('no.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#resume_upload::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('mm.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#declaration::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('mod.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+#message::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('young.jpg');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll ;
+
+    z-index: -1; /* Put it behind the section content */
+}
+
+/* Rest of your CSS remains the same */
+
+
+
+
+
+#hhead {
+    font-family: 'Copperplate Gothic', sans-serif;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Adjust to your preference */
+    font-size: 70px;
+    margin-top: 300px;
+    margin-left: 37%;
+    text-shadow: 0 4px 0 black;
+
+    
 }
 
 
-/* Form container styles */
-#application_form {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#home h2 {
+    
+    font-family: 'Copperplate Gothic', sans-serif;
+    margin-left: 300px;
+    color: turquoise; /* Adjust to your preference */
+    font-weight: bolder;
+    text-shadow: 0 1px 0 black;
 }
+
+#wecon,#showPersonalInfo,#wecon0,#wecon1,#wecon2,#wecon3,#wecon4,#wecon5,#wecon6,#wecon7,#wecon8,#wecon9,#wecon10{
+    align-items: center;
+    margin-left: 300px;
+    color: white;
+ /* Adjust to your preference */
+    justify-content: center;
+    font-size: 25px;
+    text-shadow: 0 1px 0 black;
+    object-fit: contain;
+ 
+}
+.required {
+    color: red; /* Set the color of the asterisk to red */
+    margin-left: 5px; /* Add some spacing between the label text and the asterisk */
+}
+
+#menu-button {
+    background-color: #2c3e50; /* Background color as a fallback */
+    background-size: contain; /* Set to 'auto' to maintain original image size */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background: transparent;
+    display: block;
+    position: fixed;
+    height: 80px; /* Adjust the height to your desired size */
+    width: 80px;  /* Adjust the width to your desired size */
+    bottom: 90px;
+    margin-left: 60px;
+    color: white;
+    border: none;
+    object-fit: fill;
+    cursor: pointer;
+    
+    transition: background-color 0.2s;
+    transition: top 0.3s;
+    padding: 0;
+    z-index: 2;
+}
+#contact {
+    display: flex; /* Arrange contact items in a horizontal line */
+    justify-content: center; /* Center the contact items horizontally */
+    align-items: center; /* Center the contact items vertically */
+    margin-bottom: 10px; /* Add margin to separate sections */
+}
+
+.contact-item {
+    display: flex; /* Arrange the photo and content in a contact item horizontally */
+    margin-right: 20px; /* Add margin between contact items */
+}
+
+.contact-photo {
+    width: 70px; /* Set the width and height for the photo */
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    border-radius: 50%; /* Make it a circle */
+    background-color: #ccc; /* Set a background color for the photo container */
+    display: flex; /* Center the photo content horizontally */
+    justify-content: center; /* Center the photo content vertically */
+    align-items: center;
+}
+
+.contact-content {
+    display: flex; /* Arrange the content vertically */
+    align-items: center; /* Center the content vertically */
+    font-size: 25px;
+    text-shadow: 0 1px 0 black;
+    object-fit: contain;
+    color: white;
+  
+    margin-right: 60px;
+}
+
+#ephoto {
+    background: url('gmail-100.png') left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#phphoto {
+    background: url('telephone-100.png') left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 /* Section styles */
 section {
@@ -124,6 +414,7 @@ section {
     padding: 20px;
     background-color: #f5f5f5;
     border-radius: 5px;
+    
 }
 
 /* Section heading styles */
@@ -142,6 +433,7 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.2s;
+    
 }
 
 .form-input:focus {
@@ -172,31 +464,57 @@ label input[type="checkbox"] {
 
 /* Add more specific styles as needed for your form */
 
-/* Media query for responsive design */
+/* Update the styles for responsive design */
 @media (max-width: 768px) {
     #navList {
         width: 100%;
         height: auto;
-        position: static;
-        margin-bottom: 20px;
+        position: fixed;
+        margin-top: 20px; /* Adjust spacing */
+    }
+    header, nav {
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+    .header-background {
+        min-height: 150px; /* Adjust the header height for smaller screens */
     }
 }
+
 .hidden{
     display: none;
 }
-/* Initially hide all education sections except the navigation */
-#education_levels ul,
-#education_levels ol {
+#education_levels {
+    text-align: center; /* Center the list horizontally */
+}
+
+#education_levels #edlist {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-#education_levels li a {
-    text-decoration: none; /* Remove underline or text decoration */
-    text-decoration-line: none;
-    color:cornflowerblue;
+#education_levels #edlist li {
+    display: inline;
+    margin-right: 10px;
 }
+
+#education_levels #edlist li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#education_levels #edlist li a:hover {
+    background-color: #0056b3;
+}
+#education_levels li a:visited{
+    background-color: #4CAF50;
+}
+
+
 #preferred_pronounce,#martial_status,#phone_number{
     width: 920px;
     padding: 12px;
@@ -240,18 +558,15 @@ h2 {
 }
 
 /* Style the footer */
-/* Style the footer */
 footer {
-    background-color:  #34495e;
-    color:  #ecf0f1;
+    background-color: #34495e;
+    color: #ecf0f1;
     text-align: center;
-    padding: 10px;
+    padding-top: 2px;
     width: 100%;
-    bottom: 0;
-    position: fixed; /* Keep the footer at the bottom of content */
-    clear: both; /* Ensure it clears any floated elements above it */
-    margin-top: 20px; /* Add some top margin to create space */
-    /* Set a minimum height to avoid overlapping content */
+    position: fixed; /* Fixed to the bottom of the viewport */
+    bottom: 0; /* Position at the bottom */
+    z-index: 1; /* Ensure it's above other content */
 }
 
 p, ul {
@@ -266,3 +581,4 @@ p, ul {
     text-align: center;
     display: none; /* Initially hidden */
 }
+
