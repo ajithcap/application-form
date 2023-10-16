@@ -3,74 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="web_form_js.js"></script>
+    
     <link rel="stylesheet"  href="web_form_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="web_form_js.js"></script>
+   
 
-    <title>Simple Form</title>
+    <title>Application Simple Form</title>
+    <link rel="icon" type="image/x-icon" href="spider-man-night-4k-dt.jpg">
 </head>
-<body>
+<body class="no-bg">
     <header class="header-background" >
         <h1 id="cname"> AK comapny </h1>
         <p id="slogan">"Empowering Futures, One Form at a Time"</p>
     </header>
+    
+    
     <!-- Navigation List -->
     <nav id="navList" >
         <ul>
-            <li><a href="#home" id="nav-home"  class="nav-link">home</a></li>
-            <li><a href="#personal_info" id="nav-personal"  class="nav-link">Personal Information</a></li>
-            <li><a href="#contact_info" id="nav-contact"  class="nav-link">Contact Information</a></li>
-            <li><a href="#education" id="nav-education"  class="nav-link">Education</a></li>
-            <li><a href="#work_experience" id="nav-exp"  class="nav-link">Work Experience</a></li>
-            <li><a href="#skills" id="nav-skills"  class="nav-link">Skills</a></li>
-            <li><a href="#resume_upload" id="nav-res"  class="nav-link">Resume Upload</a></li>
-            <li><a href="#declaration" id="nav-dec"  class="nav-link">Declaration</a></li>
-
+            <li><a href="#home" id="nav-home" class="nav-link">home</a></li>
+            <li><a href="#personal_info" id="nav-personal" class="nav-link">Personal Information</a></li>
+            <li><a href="#contact_info" id="nav-contact" class="nav-link">Contact Information</a></li>
+            <li><a href="#education" id="nav-education" class="nav-link">Education</a></li>
+            <li><a href="#work_experience" id="nav-exp" class="nav-link">Work Experience</a></li>
+            <li><a href="#skills" id="nav-skills" class="nav-link">Skills</a></li>
+            <li><a href="#resume_upload" id="nav-res" class="nav-link">Resume Upload</a></li>
+            <li><a href="#declaration" id="nav-dec" class="nav-link">Declaration</a></li>
         </ul>
+        
     </nav>
-    <form action="web_form_php.php" method="POST" enctype="multipart/form-data" id="application_form">
+ <button id="menu-button" class="bottom-left"> <img src="menu-bar4.png"  alt="menu"></button>
+   
+    
 
+   
     <section id="home">
-        <h2>Welcome to AK Company</h2>
-        <p>
+        
+        <video id="background-video" controls autoplay loop muted>
+            <source src="Comp - Trim.mp4" type="video/mp4" >
+            
+            </video>
+        
+          
+        <h3 id="hhead" >AK company</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+  
+        
+        <h2 id="hwel">Welcome to AK Company</h2>
+        <p id="wecon">
             At AK Company, we believe that opportunities are the stepping stones to a brighter future. Our mission is to empower individuals by providing a comprehensive application form that connects you with the opportunities you deserve.
-        </p>
-        <p>
+        </p><br><br>
+        <p id="wecon0">
             Whether you're a recent graduate, a seasoned professional, or someone looking to explore new horizons, our application form is designed to cater to your needs. By filling out our form, you open doors to exciting possibilities and a path towards success.
         </p>
+        
+        <br><br>
+        <br><br>
         <br><br>
         <h2>Who We Are</h2><br><br>
-        <p>
+        <p id="wecon1">
             AK Company is a dedicated team of professionals who understand the importance of your aspirations. We are committed to facilitating the application process, making it easier for you to take that crucial first step towards achieving your goals.
-        </p><br><br>
-        <h2>service</h2>
-        <br>
-        <p>
-            Our services encompass a wide range of opportunities and support:
-        </p><br>
-        <ul>
-            <li>Personalized Career Guidance</li>
-            <li>Customized Application Forms</li>
-            <li>Access to Exclusive Job Openings</li>
-            <li>Professional Networking</li>
-            <li>Continuous Learning Resources</li>
-        </ul>
-        <p>
-            With AK Company, you gain access to a network that empowers you to achieve your dreams and ambitions.
         </p>
         <br><br>
+        <br><br>
+        <br><br>
+        <h2>service</h2>
+        <br>
+        <p id="wecon2">
+            Our services encompass a wide range of opportunities and support:
+        </p><br>
+        <ul >
+            <li id="wecon3">Personalized Career Guidance</li>
+            <li id="wecon4">Customized Application Forms</li>
+            <li id="wecon5">Access to Exclusive Job Openings</li>
+            <li id="wecon6">Professional Networking</li>
+            <li id="wecon7">Continuous Learning Resources</li>
+        </ul>
+        <p id="wecon8">
+            With AK Company, you gain access to a network that empowers you to achieve your dreams and ambitions.
+        </p>
+       
+        <br><br>
+        <br><br>
+        <br><br>
+        <h2>APPLICATION FORM</h2><br>
+        <h3 id="wecon9">click here for apply the application form </h3><br><br>
+        <button type="button" id="showPersonalInfo">click here</button>
+        <br><br>
+        <br><br>
+        <br><br>
+        
         <h2>Contact Us</h2><br>
-        <p>
+        <p id="wecon10">
             We're here to assist you on your journey. If you have any questions or need support, please don't hesitate to reach out to our dedicated team.
         </p>
-        <p>Email: info@akcompany.com</p>
-        <p>Phone: +1 (123) 456-7890</p><br><br>
-
-        <h2>APPLICATION FORM</h2>
-        <h3>click here for apply the application form </h3>
-        <button type="button" id="showPersonalInfo">click here</button>
+        <br>
+        <div id="contact">
+            <div class="contact-item" id="email-item">
+                <div class="contact-photo" id="ephoto"></div>
+                <div class="contact-content">
+                    <p>info@akcompany.com</p>
+                </div>
+            </div>
+            <div class="contact-item" id="phone-item">
+                <div class="contact-photo" id="phphoto"></div>
+                <div class="contact-content">
+                    <p>+1 (123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+  
     </section>
     <!-- Personal Information Section -->
-    
+   
+    <form action="web_form_php.php" method="POST" enctype="multipart/form-data" id="application_form">
     <section id="personal_info" class="hidden">
         <h2 id="phead">Personal Information</h2>
         
@@ -86,40 +150,41 @@
                 <option value="other">Other</option>
             </select>
             </div>      
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" class="form-input"   pattern="[A-Za-z0-9\s]+"   autocomplete="given-name"  ><br><br>
+            <label for="first_name">First Name:<span class="required">*</span></label>
+            <input type="text" id="first_name" name="first_name" class="form-input"   pattern="[A-Za-z0-9\s]+"   autocomplete="given-name" required><br><br>
             
     
             <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" class="form-input"  pattern="[A-Za-z0-9\s]+"  >
+            <input type="text" id="last_name" name="last_name" class="form-input"  pattern="[A-Za-z0-9\s]+"  autocomplete="given-name"  >
     
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" class="form-input"><br><br>
+            <input type="number" id="age" name="age" class="form-input" autocomplete="age"><br><br>
     
             <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob" class="form-input">
+            <input type="date" id="dob" name="dob" class="form-input" autocomplete="dob">
     
             <label for="address">Address:</label>
             <textarea id="address" name="address" rows="4" cols="50" class="form-input"  autocomplete="street-address"></textarea><br><br>
     
             <label for="father_name">Father's Name:</label>
-            <input type="text" id="father_name" name="father_name"  pattern="[A-Za-z0-9\s]+" class="form-input"   >
+            <input type="text" id="father_name" name="father_name" class="form-input" pattern="[A-Za-z0-9\s]"> <br>
+
     
             <label for="mother_name">Mother's Name:</label>
             <input type="text" id="mother_name" name="mother_name" class="form-input" pattern="[A-Za-z0-9\s]+" ><br><br>
     
             <label for="father_occupation">Father's Occupation:</label>
-            <input type="text" id="father_occupation" name="father_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"  "> <br> 
+            <input type="text" id="father_occupation" name="father_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"> <br> 
             <label for="mother_occupation">Mother's Occupation:</label>
-            <input type="text" id="mother_occupation" name="mother_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"    ><br><br>
+            <input type="text" id="mother_occupation" name="mother_occupation" class="form-input"   pattern="[A-Za-z0-9\s]+"><br><br>
     
             <label for="annual_income">Annual Income:</label>
             <input type="number" id="annual_income" name="annual_income" class="form-input">
     
             <label for="nationality">Nationality:</label>
-            <input type="text" id="nationality" name="nationality"   pattern="[A-Za-z0-9\s]+" class="form-input"   ><br><br>
+            <input type="text" id="nationality" name="nationality"   pattern="[A-Za-z0-9\s]+" class="form-input" autocomplete="country-name"  ><br><br>
            
-            <label for="martial_status">Marital Status:</label>
+            <label for="martial_status">Marital Status:<span class="required">*</span></label>
              <div>
             <select id="martial_status" name="martial_status" required>
                 <option value="" disabled selected>Select Marital Status</option>
@@ -131,18 +196,19 @@
             </div>
     
             <label for="occupation">Occupation:</label>
-            <input type="text" id="occupation" name="occupation"  pattern="[A-Za-z]+" class="form-input" title="Please enter only letters (no numbers or special characters)" ><br><br>
+            <input type="text" id="occupation" name="occupation"  pattern="[A-Za-z]+" class="form-input" title="Please enter only letters (no numbers or special characters)" autocomplete="occupation"><br><br>
     
             <label for="family_members">Family Members </label>
-            <input type="number" id="family_members" name="family_members" class="form-input" placeholder="Including You"><br><br>
+            <input type="number" id="family_members" name="family_members" class="form-input" placeholder="Including You" autocomplete="family-members"><br><br>
     
             <!-- Add any other fields you want here -->
             <div class="button-container">
             <button type="button" id="nextPersonalToContact">Next</button>
+          
         </div>
-      
+
     </section>
-    
+    <p class="error-message"></p>
 
     <section id="contact_info" class="hidden">
         <h2 id="conthead">Contact Information</h2>
@@ -150,29 +216,29 @@
             <div class="form-group">
                 <label for="phone_number">Phone Number:</label>
                 <div>
-                <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{10}" placeholder="enter 10 digit">
+                <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{10}" placeholder="enter 10 digit" autocomplete="phone-number">
                 </div>
     
             </div>
     
             <div class="form-group">
-                <label for="telephone_number">Telephone Number:</label>
-                <input type="tel" id="telephone_number"  name="telephone_number" class="form-input">
+                <label for="telephone_number">Telephone Number:<span class="required">*</span></label>
+                <input type="tel" id="telephone_number"  name="telephone_number" class="form-input" required>
             </div>
     
             <div class="form-group">
                 <label for="father_number">Father's Number:</label>
-                <input type="tel" id="father_number" name="father_number" class="form-input">
+                <input type="tel" id="father_number" name="father_number" class="form-input" autocomplete="father-number">
             </div>
     
             <div class="form-group">
                 <label for="mother_number">Mother's Number:</label>
-                <input type="tel" id="mother_number" name="mother_number" class="form-input">
+                <input type="tel" id="mother_number" name="mother_number" class="form-input" autocomplete="mother-number">
             </div>
     
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-input" autocomplete="email">
+                <input type="email" id="email" name="email" class="form-input" autocomplete="email" autocomplete="email">
             </div>
     
             <!-- Social Media Information -->
@@ -180,27 +246,27 @@
     
             <div class="form-group">
                 <label for="linkedin">LinkedIn Profile:</label>
-                <input type="url" id="linkedin" name="linkedin" class="form-input">
+                <input type="url" id="linkedin" name="linkedin" class="form-input" autocomplete="linkedin">
             </div>
     
             <div class="form-group">
                 <label for="github">GitHub Profile:</label>
-                <input type="url" id="github" name="github" class="form-input">
+                <input type="url" id="github" name="github" class="form-input" autocomplete="github">
             </div>
     
             <div class="form-group">
                 <label for="instagram">Instagram:</label>
-                <input type="url" id="instagram" name="instagram" class="form-input">
+                <input type="url" id="instagram" name="instagram" class="form-input" autocomplete="instagram">
             </div>
     
             <div class="form-group">
                 <label for="twitter">Twitter:</label>
-                <input type="url" id="twitter" name="twitter" class="form-input">
+                <input type="url" id="twitter" name="twitter" class="form-input" autocomplete="twitter">
             </div>
     
             <div class="form-group">
                 <label for="portfolio">Portfolio Website:</label>
-                <input type="url" id="portfolio" name="portfolio" class="form-input">
+                <input type="url" id="portfolio" name="portfolio" class="form-input" autocomplete="portofolio">
             </div>
             <div class="button-container">
             <button type="button" id="prevContactToPersonal">Back</button>
@@ -212,12 +278,12 @@
   
         <!-- Left-side list of education levels -->
         <div id="education_levels">
-            <ul>
-                <li><a href="#ug" onclick="showDetails('ug')">UG</a></li><br>
-                <li><a href="#pg" onclick="showDetails('pg')">PG</a></li><br>
-                <li><a href="#diploma" onclick="showDetails('diploma')">Diploma</a></li><br>
-                <li><a href="#s12th" onclick="showDetails('s12th')">12th</a></li><br>
-                <li><a href="#s10th" onclick="showDetails('s10th')">10th</a></li><br>
+            <ul id="edlist">
+                <li><a href="#ug" onclick="showDetails('ug')">UG</a></li>
+                <li><a href="#pg" onclick="showDetails('pg')">PG</a></li>
+                <li><a href="#diploma" onclick="showDetails('diploma')">Diploma</a></li>
+                <li><a href="#s12th" onclick="showDetails('s12th')">12th</a></li>
+                <li><a href="#s10th" onclick="showDetails('s10th')">10th</a></li>
             </ul>
         </div>
 
@@ -229,10 +295,10 @@
                 <div id="ug_details">
                 <h3>UG Details</h3>
                 <label for="ug_university">University Name:</label>
-                <input type="text" id="ug_university" name="ug_university" class="form-input"><br><br>
+                <input type="text" id="ug_university" name="ug_university" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="ug_college">College Name:</label>
-                <input type="text" id="ug_college" name="ug_college" class="form-input"><br><br>
+                <input type="text" id="ug_college" name="ug_college" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="ug_start_date">Start Date:</label>
                 <input type="date" id="ug_start_date" name="ug_start_date" class="form-input"><br><br>
@@ -249,10 +315,10 @@
             <div id="pg">
                 <h3>PG Details</h3>
                 <label for="pg_university">University Name:</label>
-                <input type="text" id="pg_university" name="pg_university" class="form-input"><br><br>
+                <input type="text" id="pg_university" name="pg_university" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="pg_college">College Name:</label>
-                <input type="text" id="pg_college" name="pg_college" class="form-input"><br><br>
+                <input type="text" id="pg_college" name="pg_college" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="pg_start_date">Start Date:</label>
                 <input type="date" id="pg_start_date" name="pg_start_date" class="form-input"><br><br>
@@ -268,10 +334,10 @@
             <div id="diploma">
                 <h3>Diploma</h3>
                 <label for="diploma_university">University Name:</label>
-                <input type="text" id="diploma_university" name="diploma_university" class="form-input"><br><br>
+                <input type="text" id="diploma_university" name="diploma_university" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="diploma_college">College Name:</label>
-                <input type="text" id="diploma_college" name="diploma_college" class="form-input"><br><br>
+                <input type="text" id="diploma_college" name="diploma_college" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="diploma_start_date">Start Date:</label>
                 <input type="date" id="diploma_start_date" name="diploma_start_date" class="form-input"><br><br>
@@ -287,10 +353,10 @@
                 <h3>12th</h3>
                 
                 <label for="s12_school">School Name:</label>
-                <input type="text" id="s12_school" name="s12_school" class="form-input"><br><br>
+                <input type="text" id="s12_school" name="s12_school" class="form-input" autocomplete="organization-name"><br><br>
             
                 <label for="s12th_board">State Board:</label>
-                <input type="text" id="s12th_board" name="s12th_board" class="form-input"><br><br>
+                <input type="text" id="s12th_board" name="s12th_board" class="form-input" autocomplete="board"><br><br>
             
                 <label for="s12th_start_date">Start Date:</label>
                 <input type="date" id="s12th_start_date" name="s12th_start_date" class="form-input"><br><br>
@@ -307,10 +373,10 @@
             <div id="s10th">
                 <h3>10th Details</h3>
                 <label for="s10th_school">School Name:</label>
-                <input type="text" id="s10th_school" name="s10th_school" class="form-input"><br><br>
+                <input type="text" id="s10th_school" name="s10th_school" class="form-input" autocomplete="organization-name"><br><br>
 
                 <label for="s10th_board">State Board:</label>
-                <input type="text" id="s10th_board" name="s10th_board" class="form-input"><br><br>
+                <input type="text" id="s10th_board" name="s10th_board" class="form-input" autocomplete="board"><br><br>
 
                 <label for="s10th_start_date">Start Date:</label>
                 <input type="date" id="s10th_start_date" name="s10th_start_date" class="form-input"><br><br>
@@ -333,10 +399,10 @@
     <h2 id="wohead">Work Experience</h2><br>
     <div id="companies">
         <!-- Company 1 -->
-        <h3>Do you have work experience</h3><br>
-        <div id="rad">
+        <h3>Do you have work experience?<span class="required" >*</span></h3><br>
+        <div id="rad" >
         <label for="yes">Yes</label>
-        <input type="radio" name="working" id="yes" value="yes" >
+        <input type="radio" name="working" id="yes" value="yes"  >
         <label for="no">No</label>
         <input type="radio" name="working" id="no" value="no">
     </div>
@@ -345,17 +411,17 @@
             <br>
             <h3>Current Company Details</h3><br>
             <label for="companyName[]">Company Name:</label>
-            <input type="text"  name="companyName[]" id="companyName[]" placeholder="enter company name" class="form-input"><br><br>
+            <input type="text"  name="companyName[]" id="companyName[]" placeholder="enter company name" class="form-input" autocomplete="company-name"><br><br>
 
             <label for="designation[]">Designation:</label>
-            <input type="text" name="designation[]" id="designation[]" placeholder="work role" class="form-input"><br><br>
+            <input type="text" name="designation[]" id="designation[]" placeholder="work role" class="form-input" autocomplete="occupation"><br><br>
 
             <label for="joinDate[]">Join Date</label>
             <input type="date" name="joinDate[]" id="joinDate[]" class="form-input"><br><br>
             
 
             <label for="noticePeriod[]">Notice Period or End date:</label>
-            <input type="text"  name="noticePeriod[]" id="noticePeriod[]" placeholder="if no enter nil" class="form-input"><br><br>
+            <input type="text"  name="noticePeriod[]" id="noticePeriod[]" placeholder="if no enter nil" class="form-input" autocomplete="off"><br><br>
 
             <button type="button" id="addCompanyBtn">Add Company</button>
             
@@ -369,13 +435,13 @@
 <section id="skills" class="hidden">
     <h2 id="skhead">Skills</h2>
     <div>
-        <button id="addSkillButton" type="button" class="form-input">Add Skill</button>
+        <button id="addSkillButton" type="button" class="form-input" >Add Skill</button>
     </div>
     <div id="skillsContainer">
         <div id="skillsInput"></div>
 
        <!-- Remove this input -->
-       <input id="sb" type="text" name="skills[]" placeholder="excel, python,etc..." class="form-input">
+       <input id="sb" type="text" name="skills[]" placeholder="excel, python,etc..." class="form-input" autocomplete="skill">
 
     </div>
     <div class="button-container">
@@ -427,19 +493,27 @@
         <button type="submit" name="submit" id="submitButton">Submit</button>
     </div>
     </section>
-    <section >
-        <div id="success-message" class="hidden">
+    <section id="message" >
+        <div id="success-message" >
+            <h2>Status</h2>
             <div id="success-text" class="hidden">Data inserted successfully!</div>
             <div id="error-text" class="hidden">Error: Fill in the details correctly.</div>
-        
-            <button id="home-button">Home</button>
+           
+            <button id="home-button" >Home</button>
         </div>
     </section>
-    
-</body>
-    </form>
-    <footer>
-        <p>&copy; 2023 AK Company. All rights reserved.</p>
-    </footer>
    
+    
+ </form>
+ 
+ 
+
+ <footer>
+    
+    <p>&copy; 2023 AK Company. All rights reserved.</p>
+</footer>
+</body>
+
+
 </html>
+
